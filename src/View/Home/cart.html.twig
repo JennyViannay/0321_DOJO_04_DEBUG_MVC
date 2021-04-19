@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Cart {% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id article</th>
+                <th scope="col">qty</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in cart %}
+            <tr>
+                <td>{{article.title}}</td>
+                <td>{{article.qty}}</td>
+                <td>{{article.qty * article.price}}</td>
+                <td><a href="<!--TODO -->">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

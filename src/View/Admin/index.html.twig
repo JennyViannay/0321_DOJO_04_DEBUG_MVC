@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Admin {% endblock %}
+{% block content %}
+<h1>Dashbord Admin</h1>
+
+<a href="/admin/addArticle">Ajouter un article</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Descrition</th>
+            <th scope="col">Price</th>
+            <th scope="col">Hours</th>
+            <th scope="col">Image</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+        <tr>
+            <th scope="row">{{article.id}}</th>
+            <td>{{article.title}}</td>
+            <td>{{article.descrition}}</td>
+            <td>{{article.price}}</td>
+            <td>{{article.hours}}</td>
+            <td>{{article.image}}</td>
+            <td>{{article.categorie_id}}</td>
+            <td>
+                <a href="/admin/editArticle/{{ article.id }}" class="btn btn-warning">Edit</a>
+                <a href="/admin/deleteArticle/{{article.id}}" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

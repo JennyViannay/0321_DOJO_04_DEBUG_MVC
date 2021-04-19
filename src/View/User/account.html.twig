@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Account {% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Hello {{session.user.username}}</h2>
+    <h3>Wishlist</h3>
+    <div class="row mt-5">
+        {% for wish in wishlist %}
+        <div class="col-4">
+            <div class="card">
+                <img src="{{wish.article.image}}" class="card-img-top" alt="{{wish.article.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{wish.article.title}}</h5>
+                    <p class="card-text text-start">{{wish.article.description}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Show</a>
+                    <a href="/home/dislike/{{wish.wish_id}}" class="btn btn-primary">Dislike</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

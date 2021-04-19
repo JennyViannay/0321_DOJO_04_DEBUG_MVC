@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Formations {% endblock %}
+{% block content %}
+<section id="carousel container-fluid">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://placeimg.com/1000/600/tech" class="d-block w-100" alt="alt">
+            </div>
+            <div class="carousel-item">
+                <img src="https://placeimg.com/1000/600/tech" class="d-block w-100" alt="alt">
+            </div>
+            <div class="carousel-item">
+                <img src="https://placeimg.com/1000/600/tech" class="d-block w-100" alt="alt">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="categories" class="container-fluid bg-dark pt-5">
+    <h2 class="text-light text-center">Become a Dev !</h2>
+    <div class="row mt-5 text-light">
+        <div class="col-lg-6 col-md-6 col-xs-12 text-start p-5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut quaerat perferendis reiciendis quam
+                velit dicta molestiae itaque dignissimos, cumque facere laudantium qui optio at, numquam, animi aliquam
+                repudiandae. Distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut quaerat
+                perferendis reiciendis quam velit dicta molestiae itaque dignissimos, cumque facere laudantium qui optio
+                at, numquam, animi aliquam repudiandae. Distinctio. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Nemo ut quaerat perferendis reiciendis quam velit dicta molestiae itaque dignissimos, cumque
+                facere laudantium qui optio at, numquam, animi aliquam repudiandae. Distinctio.</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 mb-5">
+            <img src="https://placeimg.com/600/400/tech" alt="alt" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+<section id="formations" class="container text-center">
+    <h2>New formations available !</h2>
+    <div class="row mt-5">
+        {% for i in 0..2 %}
+        <div class="col-4">
+            <div class="card">
+                <img src="{{articles[i].image}}" class="card-img-top" alt="{{articles[i].title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{articles[i].title}}</h5>
+                    <p class="card-text text-start">{{articles[i].description}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Show</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
